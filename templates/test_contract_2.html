@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Ensure no parent conflicts affect this section */
+        #contact {
+            isolation: isolate; /* Prevent conflicts from parent sections */
+            background-color: #ffffff;
+        }
+
+        #contact button {
+            background-color: #FF9F5B;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        #contact button:hover {
+            background-color: #ff8f43;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-[#F8F6F2]">
+    <section id="contact" class="bg-white w-full py-16">
+        <div class="mx-auto max-w-3xl px-4">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold mb-2">Let's Connect</h2>
+                <p class="text-gray-600">Ready to discuss opportunities and collaborate on projects</p>
+            </div>
+    
+            <!-- Form -->
+            <form action="https://formspree.io/f/your-form-id" method="POST" class="bg-[#F8F6F2] p-6 rounded-lg shadow">
+                <!-- Full Name -->
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium">Full Name</label>
+                    <input 
+                        type="text"
+                        required
+                        class="w-full p-2 border rounded"
+                        placeholder="Enter your full name"
+                    >
+                </div>
+    
+                <!-- Email -->
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium">Email</label>
+                    <input 
+                        type="email"
+                        required
+                        class="w-full p-2 border rounded"
+                        placeholder="Enter your email"
+                    >
+                </div>
+    
+                <!-- Reason -->
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium">Reason for Contact</label>
+                    <select class="w-full p-2 border rounded">
+                        <option value="" disabled selected>Select a reason</option>
+                        <option value="career">Career Opportunity</option>
+                        <option value="project">Project Collaboration</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+    
+                <!-- Message -->
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Message</label>
+                    <textarea 
+                        rows="4"
+                        required
+                        class="w-full p-2 border rounded resize-y"
+                        placeholder="Your message here..."
+                    ></textarea>
+                </div>
+    
+                <!-- Submit Button -->
+                <button 
+                    type="submit"
+                    class="w-full bg-[#FF9F5B] text-white py-2 px-4 rounded hover:bg-[#ff8f43]"
+                >
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

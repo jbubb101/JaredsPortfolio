@@ -1,0 +1,286 @@
+/* Global Styles */
+:root {
+    --primary-color: #1A1A1A;
+    --secondary-color: #4A6FA5;
+    --cta-color: #FF9F5B;
+    --background-color: #F8F6F2;
+    --card-background: #FFFFFF;
+    --text-color: #4A5568;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--background-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Areas of Interest Section */
+.areas-of-interest {
+    padding: 5rem 0;
+}
+
+.interest-card {
+    background-color: var(--card-background);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+    background-color: rgba(74, 111, 165, 0.1);
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    color: var(--secondary-color);
+}
+
+.interest-card h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.interest-card p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.learn-more-btn {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .areas-of-interest {
+        padding: 3rem 0;
+    }
+    
+    .interest-card {
+        padding: 1.5rem;
+    }
+}
+
+
+/* Adding to existing styles.css (for projects.html */
+
+.projects-section {
+    background-color: var(--projects-bg-color);
+}
+
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-tag {
+    background-color: rgba(74, 111, 165, 0.1);
+    color: var(--secondary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.view-all-btn {
+    background-color: var(--cta-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 159, 91, 0.2);
+}
+
+.view-all-btn:hover {
+    background-color: #ff8f43;
+    box-shadow: 0 6px 12px rgba(255, 159, 91, 0.3);
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 5rem 0; /* Ensures spacing */
+    display: block;
+    background-color: var(--card-background);
+}
+
+
+.contact-section form {
+    max-width: 100%;
+}
+
+
+
+
+/* Form Input Styles */
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid var(--text-color);
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.1);
+    outline: none;
+}
+
+/* Custom Select Styles */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+}
+
+/* Submit Button Styles */
+.submit-button {
+    background-color: var(--cta-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 159, 91, 0.2);
+    margin-top: 2rem; /* Ensures proper spacing */
+}
+
+.submit-button:hover {
+    background-color: #ff8f43;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(255, 159, 91, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .contact-section {
+        padding: 2rem;
+    }
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .contact-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    form {
+        padding: 1.5rem;
+    }
+}
+
+}
+
+
+/* New Contact Form Styles */
+.contact-form-v2 {
+    max-width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.contact-form-v2 .form-group {
+    margin-bottom: 1.5rem;
+    min-height: fit-content;
+    display: block;
+}
+
+.contact-form-v2 label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.contact-form-v2 input,
+.contact-form-v2 select,
+.contact-form-v2 textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    min-height: fit-content;
+}
+
+.contact-form-v2 textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form-v2 button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--cta-color);
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.contact-form-v2 button:hover {
+    background-color: #ff8f43;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J. Briggs - Business Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F6F2;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(45deg, rgba(74, 111, 165, 0.05) 0%, rgba(255, 159, 91, 0.05) 100%);
+        }
+
+        /* Updated Marquee Animation Styles */
+        .marquee-content {
+            display: flex;
+            animation: scroll 45s linear infinite;
+        }
+
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+
+        /* Updated logo image styles */
+        .logo-image {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+        }
+
+        /* Add new style for header hover effect */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #4A6FA5;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 7 - 6rem * 7));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+        <!-- Updated Header with larger size -->
+        <header class="fixed top-0 left-0 right-0 bg-[#F8F6F2] shadow-md z-50">
+            <nav class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+                <div class="flex justify-between items-center h-20"> <!-- Increased height from h-16 to h-20 -->
+                    <!-- Logo/Name - Larger text -->
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-semibold text-[#1A1A1A] tracking-wide"> <!-- Increased from text-xl and added font-semibold -->
+                            J. Briggs
+                        </h1>
+                    </div>
+                    
+                    <!-- Navigation Links - Larger text and improved spacing -->
+                    <div class="hidden sm:block">
+                        <div class="flex space-x-12"> <!-- Increased spacing from space-x-8 to space-x-12 -->
+                            <a href="#" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Home</a>
+                            <a href="#" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Interests</a>
+                            <a href="#" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Projects</a>
+                            <a href="#" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Contact</a>
+                            <a href="#" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Resume</a>
+                        </div>
+                    </div>
+    
+                    <!-- Mobile menu button - Larger size -->
+                    <div class="sm:hidden">
+                        <button type="button" class="inline-flex items-center justify-center p-3 rounded-md text-[#1A1A1A] hover:text-[#4A6FA5]">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <!-- Increased from h-6 w-6 -->
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+    <!-- Hero Section -->
+    <main class="pt-16">
+        <div class="hero-gradient min-h-screen flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Left Column -->
+                    <div>
+                        <h2 class="text-5xl md:text-6xl font-semibold text-[#1A1A1A] mb-4">Jared Briggs</h2>
+                        <p class="text-xl text-gray-600 mb-8">Business Analyst inspired by turning complex problems into elegant solutions.</p>
+                        <div class="space-x-4">
+                            <a href="#" class="inline-block px-6 py-3 bg-[#FF9F5B] hover:bg-[#ff8f43] text-white font-medium rounded-md transition-colors duration-200">My Projects</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="flex justify-center md:justify-end">
+                        <div class="w-72 h-72 md:w-96 md:h-96 bg-gray-200 rounded-lg">
+                            <img src="../static/jared_photo.jpg" alt="Photo of Jared" class="w-full h-full object-cover rounded-lg scale-x-[-1]"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Companies Section with Heading -->
+        <div class="bg-[#F8F6F2] pt-16 pb-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-semibold text-[#1A1A1A] text-center mb-12">Companies I Have Worked With</h2>
+            </div>
+        </div>
+
+        <!-- Updated Company Logos Marquee -->
+        <div class="w-full overflow-hidden bg-[#F8F6F2] pb-16">
+            <div class="marquee-content">
+                <!-- First set of logos -->
+                <a href="https://claritas.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/claritas-logo-medium.png" alt="Claritas Consulting" class="logo-image" />
+                </a>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/DU_new_logo.jpg" alt="Company Logo 2" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/google_logo_2.webp" alt="Company Logo 3" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/NPR-logo.png" alt="Company Logo 4" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/Brunswick_Boat_Group_logo.jpg" alt="Company Logo 5" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/Angel-NV-Logo-1.jpg" alt="Company Logo 6" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/friends_of_chamber_music.jpg" alt="Company Logo 7" class="logo-image" />
+                </div>
+
+                <!-- Duplicate set for seamless loop -->
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/claritas-logo-medium.png" alt="Company Logo 1" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/DU_new_logo.jpg" alt="Company Logo 2" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/google_logo_2.webp" alt="Company Logo 3" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/NPR-logo.png" alt="Company Logo 4" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/Brunswick_Boat_Group_logo.jpg" alt="Company Logo 5" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/Angel-NV-Logo-1.jpg" alt="Company Logo 6" class="logo-image" />
+                </div>
+                <div class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="../project_assets/friends_of_chamber_music.jpg" alt="Company Logo 7" class="logo-image" />
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
