@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jared Briggs - Business Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F6F2;
+        }
+        .hero-gradient {
+            background: linear-gradient(45deg, rgba(74, 111, 165, 0.05) 0%, rgba(255, 159, 91, 0.05) 100%);
+        }
+        .projects-section {
+            background-color: #F3F1F9;
+        }
+        .interest-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .interest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .icon-wrapper {
+            background-color: rgba(74, 111, 165, 0.1);
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .learn-more-btn {
+            margin-top: auto;
+            padding: 0.5rem 1rem;
+            color: #4A6FA5;
+            border: 2px solid #4A6FA5;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+        }
+        .learn-more-btn:hover {
+            background-color: #4A6FA5;
+            color: white;
+        }
+        .hero-gradient {
+            background: linear-gradient(45deg, rgba(74, 111, 165, 0.05) 0%, rgba(255, 159, 91, 0.05) 100%);
+        }
+
+        /* Updated Marquee Animation Styles */
+        .marquee-content {
+            display: flex;
+            animation: scroll 45s linear infinite;
+        }
+
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+
+        /* Updated logo image styles */
+        .logo-image {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+        }
+
+        /* Add new style for header hover effect */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #4A6FA5;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 7 - 6rem * 7));
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+        <!-- Updated Header with larger size -->
+        <header class="fixed top-0 left-0 right-0 bg-[#F8F6F2] shadow-md z-50">
+            <nav class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+                <div class="flex justify-between items-center h-20"> <!-- Increased height from h-16 to h-20 -->
+                    <!-- Logo/Name - Larger text -->
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-semibold text-[#1A1A1A] tracking-wide"> <!-- Increased from text-xl and added font-semibold -->
+                            J. Briggs
+                        </h1>
+                    </div>
+                    
+                    <!-- Navigation Links - Larger text and improved spacing -->
+                    <div class="hidden sm:block">
+                        <div class="flex space-x-12"> <!-- Increased spacing from space-x-8 to space-x-12 -->
+                            <a href="#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Home</a>
+                            <a href="#interests" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Interests</a>
+                            <a href="#projects" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Projects</a>
+                            <a href="#contact" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Contact</a>
+                            <a href="../assets/resume.pdf" target="_blank" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Resume</a>
+                        </div>
+                    </div>
+    
+                    <!-- Mobile menu button - Larger size -->
+                    <div class="sm:hidden">
+                        <button type="button" class="inline-flex items-center justify-center p-3 rounded-md text-[#1A1A1A] hover:text-[#4A6FA5]">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <!-- Increased from h-6 w-6 -->
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+<!-- Welcome Section -->
+    <!-- Welcome Section - Modified min-height and padding -->
+    <section id="home" class="pt-14">
+        <div class="hero-gradient min-h-[70vh]"> <!-- Changed from min-h-[90vh] to min-h-[70vh] -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"> <!-- Changed py-20 to py-12 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Left Column -->
+                    <div>
+                        <h2 class="text-5xl md:text-6xl font-semibold text-[#1A1A1A] mb-4">Jared Briggs</h2>
+                        <p class="text-xl text-gray-600 mb-8">Business Analyst inspired by turning complex problems into elegant solutions.</p>
+                        <div class="space-x-4">
+                            <a href="#" class="inline-block px-6 py-3 bg-[#FF9F5B] hover:bg-[#ff8f43] text-white font-medium rounded-md transition-colors duration-200">My Projects</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="flex justify-center md:justify-end">
+                        <div class="w-72 h-72 md:w-96 md:h-96 bg-gray-200 rounded-lg">
+                            <img src="../static/jared_photo.jpg" alt="Photo of Jared" class="w-full h-full object-cover rounded-lg scale-x-[-1]"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Companies Section with Heading -->
+    <div class="bg-[#F8F6F2] pt-16 pb-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-semibold text-[#1A1A1A] text-center mb-12">Companies I Have Worked With</h2>
+        </div>
+    </div>
+
+    <!-- Updated Company Logos Marquee -->
+    <div class="w-full overflow-hidden bg-[#F8F6F2] pb-16">
+        <div class="marquee-content">
+            <!-- First set of logos -->
+            <a href="https://claritas.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/claritas-logo-medium.png" alt="Claritas Consulting" class="logo-image" />
+            </a>
+            <a href="https://www.du.edu/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/DU_new_logo.jpg" alt="University of Denver" class="logo-image" />
+            </a>
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/google_logo_2.webp" alt="Google" class="logo-image" />
+            </a>
+            <a href="https://www.npr.org/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/NPR-logo.png" alt="NPR" class="logo-image" />
+            </a>
+            <a href="https://www.brunswick.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/Brunswick_Boat_Group_logo.jpg" alt="Brunswick Boat Group" class="logo-image" />
+            </a>
+            <a href="https://www.angelnv.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/Angel-NV-Logo-1.jpg" alt="Angel NV" class="logo-image" />
+            </a>
+            <a href="https://friendsofchambermusic.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/friends_of_chamber_music.jpg" alt="Friends of Chamber Music" class="logo-image" />
+            </a>
+
+            <!-- Duplicate set for seamless loop -->
+            <a href="https://claritas.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/claritas-logo-medium.png" alt="Claritas Consulting" class="logo-image" />
+            </a>
+            <a href="https://www.du.edu/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/DU_new_logo.jpg" alt="University of Denver" class="logo-image" />
+            </a>
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/google_logo_2.webp" alt="Google" class="logo-image" />
+            </a>
+            <a href="https://www.npr.org/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/NPR-logo.png" alt="NPR" class="logo-image" />
+            </a>
+            <a href="https://www.brunswick.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/Brunswick_Boat_Group_logo.jpg" alt="Brunswick Boat Group" class="logo-image" />
+            </a>
+            <a href="https://www.angelnv.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/Angel-NV-Logo-1.jpg" alt="Angel NV" class="logo-image" />
+            </a>
+            <a href="https://friendsofchambermusic.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-[250px] h-[100px] mx-12 flex items-center justify-center bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src="../project_assets/friends_of_chamber_music.jpg" alt="Friends of Chamber Music" class="logo-image" />
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Areas of Interest Section -->
+    <section id="interests" class="areas-of-interest py-20"></section>
+        <body class="bg-[#F8F6F2]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-semibold text-[#1A1A1A] mb-4">Areas of Interest</h2>
+                        <p class="text-gray-600">Take a look at some of the things I love working on.</p>
+                    </div>
+        
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Requirements Analysis -->
+                        <div class="interest-card">
+                            <div class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <line x1="8" y1="12" x2="16" y2="12"/>
+                                    <line x1="8" y1="8" x2="16" y2="8"/>
+                                    <line x1="8" y1="16" x2="16" y2="16"/>
+                                </svg>
+                            </div>
+                            <h3>Requirements Analysis</h3>
+                            <p>Gathering, documenting, and analyzing business requirements to ensure solutions meet stakeholder needs.</p>
+                            <a href="/requirements-analysis" class="learn-more-btn">Learn More</a>
+                        </div>
+        
+                        <!-- Process Modeling -->
+                        <div class="interest-card">
+                            <div class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="6" y1="3" x2="6" y2="15"/>
+                                    <circle cx="18" cy="6" r="3"/>
+                                    <circle cx="6" cy="18" r="3"/>
+                                    <path d="M18 9a9 9 0 0 1-9 9"/>
+                                </svg>
+                            </div>
+                            <h3>Process Modeling</h3>
+                            <p>Creating detailed process flows and diagrams to visualize and optimize business operations.</p>
+                            <a href="/process-modeling" class="learn-more-btn">Learn More</a>
+                        </div>
+        
+                        <!-- Data Analytics -->
+                        <div class="interest-card">
+                            <div class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="20" x2="12" y2="10"/>
+                                    <line x1="18" y1="20" x2="18" y2="4"/>
+                                    <line x1="6" y1="20" x2="6" y2="16"/>
+                                </svg>
+                            </div>
+                            <h3>Data Analytics</h3>
+                            <p>Transforming raw data into actionable insights through visualization and statistical analysis.</p>
+                            <a href="/data-analytics" class="learn-more-btn">Learn More</a>
+                        </div>
+        
+                        <!-- Stakeholder Communication -->
+                        <div class="interest-card">
+                            <div class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="7" r="4"/>
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                </svg>
+                            </div>
+                            <h3>Stakeholder Communication</h3>
+                            <p>Facilitating effective communication between technical teams and business stakeholders.</p>
+                            <a href="/stakeholder-communication" class="learn-more-btn">Learn More</a>
+                        </div>
+        
+                        <!-- System Design -->
+                        <div class="interest-card">
+                            <div class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="7"/>
+                                    <rect x="14" y="3" width="7" height="7"/>
+                                    <rect x="14" y="14" width="7" height="7"/>
+                                    <rect x="3" y="14" width="7" height="7"/>
+                                </svg>
+                            </div>
+                            <h3>System Design</h3>
+                            <p>Designing and documenting system architectures and solutions to meet business requirements.</p>
+                            <a href="/system-design" class="learn-more-btn">Learn More</a>
+                        </div>
+        
+                        <!-- Project Management -->
+                        <div class="interest-card">
+                            <div class="icon-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="16" rx="2"/>
+                                    <line x1="7" y1="8" x2="17" y2="8"/>
+                                    <line x1="7" y1="12" x2="17" y2="12"/>
+                                    <line x1="7" y1="16" x2="13" y2="16"/>
+                                </svg>
+                            </div>
+                            <h3>Project Management</h3>
+                            <p>Leading and coordinating projects from inception to successful implementation.</p>
+                            <a href="/project-management" class="learn-more-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </body>
+            </div>
+    </section>
+
+    <!-- Projects Section Placeholder -->
+    <section id="projects" class="projects-section py-20">
+        <!-- Projects content will go here -->
+        <body>
+            <!-- Projects Section with warm lavender background (#F3F1F9) as complement -->
+            <section class="projects-section bg-[#F3F1F9] py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-semibold text-[#1A1A1A] mb-4">Featured Projects</h2>
+                        <p class="text-gray-600">A showcase of my recent business analysis work and solutions.</p>
+                    </div>
+        
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                        <!-- Project 1 -->
+                        <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                            <div class="h-48 bg-[#4A6FA5] bg-opacity-10">
+                                <img src="../project_assets/DU_new_logo.jpg" alt="Project 1" class="w-full h-full object-cover"/>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Process Optimization</span>
+                                    <span class="text-sm text-gray-500">2024</span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">DU AI Tool</h3>
+                                <p class="text-gray-600 mb-4">Led the analysis and implementation of a new ERP system, resulting in 40% efficiency improvement.</p>
+                                <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">
+                                    View Full Project →
+                                </a>
+                            </div>
+                        </div>
+        
+                        <!-- Project 2 -->
+                        <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                            <div class="h-48 bg-[#4A6FA5] bg-opacity-10">
+                                <img src="../Rivian_Assets/Rivian_Logo_Resized.jpg" alt="Project 2" class="w-full h-full object-cover"/>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Data Analytics</span>
+                                    <span class="text-sm text-gray-500">2024</span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Customer Journey Analytics</h3>
+                                <p class="text-gray-600 mb-4">Developed comprehensive customer journey maps and analytics dashboard for key stakeholders.</p>
+                                <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">
+                                    View Full Project →
+                                </a>
+                            </div>
+                        </div>
+        
+                        <!-- Project 3 -->
+                        <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+                            <div class="h-48 bg-[#4A6FA5] bg-opacity-10">
+                                <img src="../Claritas_Assets/Claritas-Logo-for-Site.png" alt="Claritas Project" class="w-full h-full object-cover"/>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Requirements Analysis</span>
+                                    <span class="text-sm text-gray-500">2023</span>
+                                </div>
+                                <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Claritas PersonaAI</h3>
+                                <p class="text-gray-600 mb-4">Automated critical business processes reducing manual work by 65% and improving accuracy.</p>
+                                <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">
+                                    View Full Project →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- View All Projects Button -->
+                    <div class="text-center">
+                        <a href="/all-projects" class="inline-block px-8 py-4 bg-[#FF9F5B] hover:bg-[#ff8f43] text-white font-medium rounded-md transition-colors duration-200 shadow-lg hover:shadow-xl">
+                            View All Projects
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </body>
+
+    </section>
+
+<!-- Contact Section -->
+    <style>
+        /* Ensure no parent conflicts affect this section */
+        #contact {
+            isolation: isolate; /* Prevent conflicts from parent sections */
+            background-color: #ffffff;
+        }
+        #contact button {
+            background-color: #FF9F5B !important;
+            color: white !important;
+            padding: 0.75rem 1.5rem !important;
+            border-radius: 0.375rem !important;
+            transition: all 0.3s ease !important;
+        }
+
+        #contact button:hover {
+            background-color: #ff8f43 !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+
+    </style>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!-- Contact Section -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <section id="contact" class="contact-form-v2 py-16 bg-white">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="max-w-md mx-auto px-4">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <h2 class="text-4xl text-center font-bold mb-4">Let's Connect</h2>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p class="text-center text-gray-600 mb-8">Ready to discuss opportunities and collaborate on projects</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <form method="POST" action="https://formspree.io/f/your-form-id">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="form-group">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <label>Name</label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <input type="text" name="name" required>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="form-group">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <label>Email</label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <input type="email" name="email" required>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="form-group">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <label>Purpose</label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <select name="purpose" required>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <option value="" disabled selected>Choose a purpose</option>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <option value="career">Career Opportunity</option>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <option value="project">Project Collaboration</option>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <option value="other">Other</option>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </select>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="form-group">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <label>Message</label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <textarea name="message" required></textarea>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button type="submit">Send Message</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </form>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </section>
+
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
