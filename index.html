@@ -97,6 +97,15 @@
             width: 100%;
         }
 
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
         @keyframes scroll {
             0% {
                 transform: translateX(0);
@@ -109,40 +118,54 @@
 </head>
 <body>
 <!-- Header -->
-        <!-- Updated Header with larger size -->
-        <header class="fixed top-0 left-0 right-0 bg-[#F8F6F2] shadow-md z-50">
-            <nav class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-                <div class="flex justify-between items-center h-20"> <!-- Increased height from h-16 to h-20 -->
-                    <!-- Logo/Name - Larger text -->
-                    <div class="flex-shrink-0">
-                        <h1 class="text-2xl font-semibold text-[#1A1A1A] tracking-wide"> <!-- Increased from text-xl and added font-semibold -->
-                            J. Briggs
-                        </h1>
-                    </div>
-                    
-                    <!-- Navigation Links - Larger text and improved spacing -->
-                    <div class="hidden sm:block">
-                        <div class="flex space-x-12"> <!-- Increased spacing from space-x-8 to space-x-12 -->
-                            <a href="#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Home</a>
-                            <a href="#interests" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Interests</a>
-                            <a href="#projects" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Projects</a>
-                            <a href="#contact" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Contact</a>
-                            <a href="assets/resume.pdf" target="_blank" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Resume</a>
-                        </div>
-                    </div>
-    
-                    <!-- Mobile menu button - Larger size -->
-                    <div class="sm:hidden">
-                        <button type="button" class="inline-flex items-center justify-center p-3 rounded-md text-[#1A1A1A] hover:text-[#4A6FA5]">
-                            <span class="sr-only">Open main menu</span>
-                            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <!-- Increased from h-6 w-6 -->
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </button>
+           <!-- Updated Header with Mobile Menu -->
+    <header class="fixed top-0 left-0 right-0 bg-[#F8F6F2] shadow-md z-50">
+        <nav class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-semibold text-[#1A1A1A] tracking-wide">
+                        J. Briggs
+                    </h1>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden sm:block">
+                    <div class="flex space-x-12">
+                        <a href="#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Home</a>
+                        <a href="#interests" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Interests</a>
+                        <a href="#projects" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Projects</a>
+                        <a href="#contact" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Contact</a>
+                        <a href="assets/resume.pdf" target="_blank" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Resume</a>
                     </div>
                 </div>
-            </nav>
-        </header>
+
+                <!-- Mobile menu button -->
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-3 rounded-md text-[#1A1A1A] hover:text-[#4A6FA5]" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 w-64 bg-[#F8F6F2] shadow-lg transform sm:hidden">
+                <div class="px-4 pt-24 pb-6 space-y-6">
+                    <div class="flex flex-col space-y-4">
+                        <a href="#home" class="text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-lg font-medium transition-colors duration-200">Home</a>
+                        <a href="#interests" class="text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-lg font-medium transition-colors duration-200">Interests</a>
+                        <a href="#projects" class="text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-lg font-medium transition-colors duration-200">Projects</a>
+                        <a href="#contact" class="text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-lg font-medium transition-colors duration-200">Contact</a>
+                        <a href="assets/resume.pdf" target="_blank" class="text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-lg font-medium transition-colors duration-200">Resume</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
 
 <!-- Welcome Section -->
     <!-- Welcome Section - Modified min-height and padding -->
@@ -481,6 +504,36 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+
+         // Mobile menu functionality
+         const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        mobileMenuButton.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('active', isMenuOpen);
+            mobileMenuButton.setAttribute('aria-expanded', isMenuOpen);
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.remove('active');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                isMenuOpen = false;
+                mobileMenu.classList.remove('active');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
         });
     </script>
 </body>
