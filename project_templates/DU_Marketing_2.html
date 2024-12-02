@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.12.2/Recharts.min.js"></script>
+  <style>
+    :root {
+      --primary: #2a2a2a;
+      --secondary: #4169e1;
+      --accent: #ff6b3d;
+    }
+    
+    .nav-link:hover {
+      color: var(--secondary);
+      transition: color 0.3s ease;
+    }
+
+    .content-section {
+      border-bottom: 1px solid #eaeaea;
+      padding: 2rem 0;
+    }
+
+    .content-section:last-child {
+      border-bottom: none;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Navigation Bar -->
+  <nav class="bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid grid-cols-2 h-16 items-center">
+        <div class="text-xl font-bold text-gray-800">Portfolio</div>
+        <div class="text-right space-x-8">
+          <a href="#" class="nav-link text-gray-600 hover:text-blue-600">Home</a>
+          <a href="#" class="nav-link text-gray-600 hover:text-blue-600">Projects</a>
+          <a href="#" class="nav-link text-gray-600 hover:text-blue-600">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Post Content -->
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <!-- Project Header -->
+    <div class="content-section">
+      <h1 class="text-4xl font-bold text-gray-800 mb-4">AI Tool For DU Marketing</h1>
+      <div class="text-sm text-gray-600 space-y-2">
+        <p><strong>Duration:</strong> 3 months</p>
+        <p><strong>Completed:</strong> October 2024</p>
+        <p><strong>Role:</strong> AI Engineer</p>
+        <p><strong>Tech Stack:</strong> Python, Amazon</p>
+      </div>
+    </div>
+
+    <!-- Project Demo Video -->
+    <div class="content-section">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Project Demo</h2>
+      <div class="video-container mb-4">
+        <img src="/api/placeholder/800/450" alt="Project demo video placeholder" class="w-full"/>
+      </div>
+      <p class="text-sm text-gray-500 italic">Demo video showcasing the DU Marketing Tool's key features and functionality.</p>
+    </div>
+
+    <!-- Project Overview -->
+    <div class="content-section">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Project Overview</h2>
+      <p class="text-gray-600">
+        For this project the goal was to build a DU AI tool that would eliminate monotonous and annoying tasks while improving the accuracy of blog posts, requests...
+      </p>
+    </div>
+
+    <!-- Performance Metrics -->
+    <div class="content-section">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Performance Metrics</h2>
+      <div class="space-y-6">
+        <!-- Task Completion Time Chart -->
+        <div>
+          <h3 class="text-xl font-semibold text-blue-600 mb-4">Task Completion Time Improvement</h3>
+          <img src="/api/placeholder/800/400" alt="Task completion time chart" class="w-full mb-2"/>
+          <p class="text-sm text-gray-500 italic">Average time saved per task after implementing the AI tool.</p>
+        </div>
+        
+        <!-- Accuracy Metrics -->
+        <div>
+          <h3 class="text-xl font-semibold text-blue-600 mb-4">Accuracy Improvement</h3>
+          <img src="/api/placeholder/800/400" alt="Accuracy metrics visualization" class="w-full mb-2"/>
+          <p class="text-sm text-gray-500 italic">Comparison of error rates before and after implementation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Usage Showcase -->
+    <div class="content-section">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Usage Showcase</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">AI powered Analysis</h3>
+          <p class="text-gray-600">Utilized AI to analyze text and email to get suggestions and changes</p>
+          <img src="/api/placeholder/800/400" alt="AI analysis example" class="w-full mt-4"/>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">Logo Detection</h3>
+          <p class="text-gray-600">Utilize AI visual detection to analyze Daniels Logos.</p>
+          <img src="/api/placeholder/800/400" alt="Logo detection demo" class="w-full mt-4"/>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">Customizable Memory System</h3>
+          <p class="text-gray-600">Allow the AI to remember or forget memories</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="content-section">
+      <p class="text-gray-600 mb-4">
+        The Daniel Marketing Tool is designed to streamline your workflow, whether you're generating captions and headers for media posts or using AI for logo detection. This tool enhances your efficiency by providing AI-powered analysis, offering suggestions and advice for text or emails in line with the University of Denver style guide.
+      </p>
+      <p class="text-gray-600">
+        As time passes, the AI will improve and become better suited to your needs, ultimately becoming a more effective product.
+      </p>
+    </div>
+
+    <!-- Methodology -->
+    <div class="content-section">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Methodology & Implementation</h2>
+      <p class="text-gray-600 mb-4">
+        I began by gathering stakeholder requirements. These stakeholder requirements...
+      </p>
+      <!-- Development Timeline -->
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold text-blue-600 mb-4">Development Timeline</h3>
+        <img src="/api/placeholder/800/200" alt="Development timeline" class="w-full"/>
+      </div>
+    </div>
+
+    <!-- Impact -->
+    <div class="content-section">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Impact & Results</h2>
+      <p class="text-gray-600 mb-6">
+        The impact of this project meant that...
+      </p>
+      <!-- ROI Visualization -->
+      <div>
+        <h3 class="text-xl font-semibold text-blue-600 mb-4">Return on Investment</h3>
+        <img src="/api/placeholder/800/400" alt="ROI visualization" class="w-full"/>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
