@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -118,6 +119,18 @@
             100% {
                 transform: translateX(calc(-250px * 7 - 6rem * 7));
             }
+        }
+
+        /* Additional Styling */
+        .icon-wrapper {
+        background-color: rgba(74, 111, 165, 0.1);
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
         }
     </style>
 </head>
@@ -266,113 +279,70 @@
     </div>
 </section>
 
-        <!-- Areas of Interest Section -->
-        <section id="interests" class="areas-of-interest py-20">
-            <div class="bg-[#F8F6F2]">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-16">
-                        <h2 class="text-3xl font-semibold text-[#1A1A1A] mb-4">Areas of Interest</h2>
-                        <p class="text-gray-600">Take a look at some of the things I love working on.</p>
-                    </div>
-    
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Data Visualizations -->
-                        <div class="interest-card">
-                            <div class="icon-wrapper">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="2" y1="20" x2="22" y2="20"></line>
-                                    <polyline points="2 20 12 4 22 20"></polyline>
-                                    <line x1="7" y1="12" x2="17" y2="12"></line>
-                                </svg>
-                            </div>
-                            <h3>Data Visualizations</h3>
-                            <p>Crafting compelling visual representations of data to uncover insights, tell stories, and guide decision-making.</p>
-                            <a href="/requirements-analysis" class="learn-more-btn">Learn More</a>
-                        </div>
-    
-                        <!-- Health & Fitness -->
-                        <div class="interest-card">
-                            <div class="icon-wrapper">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
-                                </svg>
-                            </div>
-                            <h3>Health & Fitness</h3>
-                            <p>Analyzing and optimizing health and fitness trends, building strategies for wellness initiatives, and leveraging data to improve health outcomes.</p>
-                            <a href="/process-modeling" class="learn-more-btn">Learn More</a>
-                        </div>
-    
-                        <!-- Data Analytics -->
-                        <div class="interest-card">
-                            <div class="icon-wrapper">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="2"></rect>
-                                    <line x1="7" y1="12" x2="7" y2="17"></line>
-                                    <line x1="12" y1="8" x2="12" y2="17"></line>
-                                    <line x1="17" y1="4" x2="17" y2="17"></line>
-                                </svg>
-                            </div>
-                            <h3>Data Analytics</h3>
-                            <p>Extracting meaningful patterns from raw data to solve problems, improve processes, and support strategic goals.</p>
-                            <a href="/data-analytics" class="learn-more-btn">Learn More</a>
-                        </div>
-    
-                        <!-- Machine Learning & AI - Updated with brain circuit icon -->
-                        <div class="interest-card">
-                            <div class="icon-wrapper">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 4.24 3 3 0 0 0 .34 5.58 2.5 2.5 0 0 0 2.96 3.08A2.5 2.5 0 0 0 12 19.5a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 12 4.5"></path>
-                                    <path d="m12 15-3-3a3 3 0 1 1 0-3"></path>
-                                    <path d="m12 15 3-3a3 3 0 1 0 0-3"></path>
-                                    <circle cx="12" cy="12" r="2"></circle>
-                                </svg>
-                            </div>
-                            <h3>Machine Learning & AI</h3>
-                            <p>Developing intelligent systems that learn and adapt, applying predictive models, and automating tasks to drive innovation.</p>
-                            <a href="/stakeholder-communication" class="learn-more-btn">Learn More</a>
-                        </div>
-    
-                        <!-- Communication and Sales -->
-                        <div class="interest-card">
-                            <div class="icon-wrapper">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                    <circle cx="12" cy="10" r="1"></circle>
-                                    <circle cx="8" cy="10" r="1"></circle>
-                                    <circle cx="16" cy="10" r="1"></circle>
-                                </svg>
-                            </div>
-                            <h3>Communication and Sales</h3>
-                            <p>Building relationships, presenting ideas effectively, and crafting tailored strategies to meet customer needs and achieve business objectives.</p>
-                            <a href="/project-management" class="learn-more-btn">Learn More</a>
-                        </div>
-                <!-- System Design - Updated with network/architecture icon -->
-                <div class="interest-card">
-                    <div class="icon-wrapper">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-                            <rect x="9" y="9" width="6" height="6"></rect>
-                            <line x1="9" y1="2" x2="9" y2="4"></line>
-                            <line x1="15" y1="2" x2="15" y2="4"></line>
-                            <line x1="9" y1="20" x2="9" y2="22"></line>
-                            <line x1="15" y1="20" x2="15" y2="22"></line>
-                            <line x1="20" y1="9" x2="22" y2="9"></line>
-                            <line x1="20" y1="15" x2="22" y2="15"></line>
-                            <line x1="2" y1="9" x2="4" y2="9"></line>
-                            <line x1="2" y1="15" x2="4" y2="15"></line>
-                        </svg>
-                    </div>
-                    <h3>System Design</h3>
-                    <p>Designing and documenting system architectures and solutions to meet business requirements.</p>
-                    <a href="/project-management" class="learn-more-btn">Learn More</a>
+         <!-- Areas of Interest Section -->
+    <section id="interests" class="areas-of-interest py-20">
+        <div class="bg-[#F8F6F2]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-semibold text-[#1A1A1A] mb-4">Areas of Interest</h2>
+                    <p class="text-gray-600">Take a look at some of the things I love working on.</p>
                 </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Data Visualizations -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="bar-chart-2"></i></div>
+                        <h3>Data Visualizations</h3>
+                        <p>Crafting compelling visual representations of data to uncover insights, tell stories, and guide decision-making.</p>
+                        <a href="/requirements-analysis" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <!-- Health & Fitness -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="heart"></i></div>
+                        <h3>Health & Fitness</h3>
+                        <p>Analyzing and optimizing health and fitness trends, building strategies for wellness initiatives, and leveraging data to improve health outcomes.</p>
+                        <a href="/process-modeling" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <!-- Data Analytics -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="line-chart"></i></div>
+                        <h3>Data Analytics</h3>
+                        <p>Extracting meaningful patterns from raw data to solve problems, improve processes, and support strategic goals.</p>
+                        <a href="/data-analytics" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <!-- Machine Learning & AI -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="brain"></i></div>
+                        <h3>Machine Learning & AI</h3>
+                        <p>Developing intelligent systems that learn and adapt, applying predictive models, and automating tasks to drive innovation.</p>
+                        <a href="/stakeholder-communication" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <!-- Communication and Sales -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="message-circle"></i></div>
+                        <h3>Communication and Sales</h3>
+                        <p>Building relationships, presenting ideas effectively, and crafting tailored strategies to meet customer needs and achieve business objectives.</p>
+                        <a href="/project-management" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <!-- System Design -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="network"></i></div>
+                        <h3>System Design</h3>
+                        <p>Designing and documenting system architectures and solutions to meet business requirements.</p>
+                        <a href="/project-management" class="learn-more-btn">Learn More</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
         </body>
             </div>
     </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lucide.createIcons();
+        });
+    </script>
 
     <!-- Projects Section Placeholder -->
     <section class="projects-section bg-[#F3F1F9] py-20">
@@ -527,6 +497,16 @@
     <!-- Smooth Scroll Script -->
     <script>
 
+        document.addEventListener('DOMContentLoaded', function () {
+                try {
+                    lucide.createIcons();
+                    console.log('Lucide icons initialized successfully.');
+                } catch (error) {
+                    console.error('Error initializing Lucide icons:', error);
+                }
+            });
+                
+
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -572,6 +552,8 @@
                 });
             });
         });
+
+
 
     </script>
 

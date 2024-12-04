@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jared Briggs - Business Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* Additional Styling */
+        .icon-wrapper {
+            background-color: rgba(74, 111, 165, 0.1);
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Rest of your content -->
+
+    <!-- Areas of Interest Section -->
+    <section id="interests" class="areas-of-interest py-20">
+        <div class="bg-[#F8F6F2]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-semibold text-[#1A1A1A] mb-4">Areas of Interest</h2>
+                    <p class="text-gray-600">Take a look at some of the things I love working on.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Data Visualizations -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="bar-chart-2"></i></div>
+                        <h3>Data Visualizations</h3>
+                        <p>Crafting compelling visual representations of data to uncover insights, tell stories, and guide decision-making.</p>
+                        <a href="/requirements-analysis" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <!-- Health & Fitness -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="heart"></i></div>
+                        <h3>Health & Fitness</h3>
+                        <p>Analyzing and optimizing health and fitness trends, building strategies for wellness initiatives, and leveraging data to improve health outcomes.</p>
+                        <a href="/process-modeling" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <!-- Data Analytics -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="line-chart"></i></div>
+                        <h3>Data Analytics</h3>
+                        <p>Extracting meaningful patterns from raw data to solve problems, improve processes, and support strategic goals.</p>
+                        <a href="/data-analytics" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <!-- Machine Learning & AI -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="brain"></i></div>
+                        <h3>Machine Learning & AI</h3>
+                        <p>Developing intelligent systems that learn and adapt, applying predictive models, and automating tasks to drive innovation.</p>
+                        <a href="/stakeholder-communication" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <!-- Communication and Sales -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="message-circle"></i></div>
+                        <h3>Communication and Sales</h3>
+                        <p>Building relationships, presenting ideas effectively, and crafting tailored strategies to meet customer needs and achieve business objectives.</p>
+                        <a href="/project-management" class="learn-more-btn">Learn More</a>
+                    </div>
+                    <!-- System Design -->
+                    <div class="interest-card">
+                        <div class="icon-wrapper"><i data-lucide="network"></i></div>
+                        <h3>System Design</h3>
+                        <p>Designing and documenting system architectures and solutions to meet business requirements.</p>
+                        <a href="/project-management" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

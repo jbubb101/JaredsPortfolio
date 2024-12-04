@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .areas-of-interest {
+            background-color: #F8F6F2;
+            padding: 5rem 0;
+        }
+        .interest-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .icon-wrapper {
+            margin-bottom: 1rem;
+            color: #2563eb;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .text-center {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #1A1A1A;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            color: #666;
+        }
+        .learn-more-btn {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .learn-more-btn:hover {
+            color: #1d4ed8;
+        }
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <!-- Lucide CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <section class="areas-of-interest">
+        <div class="text-center">
+            <h2 class="section-title">Areas of Interest</h2>
+            <p class="section-subtitle">Take a look at some of the things I love working on.</p>
+        </div>
+
+        <div class="grid-container">
+            <!-- Data Visualizations -->
+            <div class="interest-card">
+                <div class="icon-wrapper viz-icon-wrapper"><i data-lucide="bar-chart-2"></i></div>
+                <h3>Data Visualizations</h3>
+                <p>Crafting compelling visual representations of data to uncover insights, tell stories, and guide decision-making.</p>
+                <a href="/requirements-analysis" class="learn-more-btn">Learn More</a>
+            </div>
+
+            <!-- Health & Fitness -->
+            <div class="interest-card">
+                <div class="icon-wrapper health-icon-wrapper"><i data-lucide="cross"></i></div>
+                <h3>Health & Fitness</h3>
+                <p>Analyzing and optimizing health and fitness trends, building strategies for wellness initiatives, and leveraging data to improve health outcomes.</p>
+                <a href="/process-modeling" class="learn-more-btn">Learn More</a>
+            </div>
+
+            <!-- Data Analytics -->
+            <div class="interest-card">
+                <div class="icon-wrapper analytics-icon-wrapper"><i data-lucide="line-chart"></i></div>
+                <h3>Data Analytics</h3>
+                <p>Extracting meaningful patterns from raw data to solve problems, improve processes, and support strategic goals.</p>
+                <a href="/data-analytics" class="learn-more-btn">Learn More</a>
+            </div>
+
+            <!-- Machine Learning & AI -->
+            <div class="interest-card">
+                <div class="icon-wrapper ai-icon-wrapper"><i data-lucide="brain"></i></div>
+                <h3>Machine Learning & AI</h3>
+                <p>Developing intelligent systems that learn and adapt, applying predictive models, and automating tasks to drive innovation.</p>
+                <a href="/stakeholder-communication" class="learn-more-btn">Learn More</a>
+            </div>
+
+            <!-- Communication and Sales -->
+            <div class="interest-card">
+                <div class="icon-wrapper comm-icon-wrapper"><i data-lucide="message-circle"></i></div>
+                <h3>Communication and Sales</h3>
+                <p>Building relationships, presenting ideas effectively, and crafting tailored strategies to meet customer needs and achieve business objectives.</p>
+                <a href="/project-management" class="learn-more-btn">Learn More</a>
+            </div>
+
+            <!-- System Design -->
+            <div class="interest-card">
+                <div class="icon-wrapper system-icon-wrapper"><i data-lucide="network"></i></div>
+                <h3>System Design</h3>
+                <p>Designing and documenting system architectures and solutions to meet business requirements.</p>
+                <a href="/project-management" class="learn-more-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
