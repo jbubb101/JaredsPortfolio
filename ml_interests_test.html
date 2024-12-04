@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning & AI - Jared Briggs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F6F2;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #4A6FA5;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .section-divide {
+            position: relative;
+        }
+        .section-divide::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (Unchanged) -->
+    <header class="fixed top-0 left-0 right-0 bg-[#F8F6F2] shadow-sm z-50">
+        <nav class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-semibold text-[#1A1A1A] tracking-wide">J. Briggs</a>
+                </div>
+                
+                <div class="hidden sm:block">
+                    <div class="flex space-x-12">
+                        <a href="index.html#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Home</a>
+                        <a href="index.html#interests" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Interests</a>
+                        <a href="index.html#projects" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Projects</a>
+                        <a href="index.html#contact" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Contact</a>
+                    </div>
+                </div>
+
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <nav class="mb-12">
+                <ol class="flex items-center space-x-2 text-gray-600">
+                    <li><a href="index.html" class="hover:text-[#4A6FA5]">Home</a></li>
+                    <li><span class="mx-2">/</span></li>
+                    <li><a href="index.html#interests" class="hover:text-[#4A6FA5]">Areas of Interest</a></li>
+                    <li><span class="mx-2">/</span></li>
+                    <li class="text-[#4A6FA5]">Machine Learning & AI</li>
+                </ol>
+            </nav>
+
+            <!-- Hero Section -->
+            <div class="mb-16 section-divide pb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-[#4A6FA5] bg-opacity-10 rounded-full flex items-center justify-center mr-6">
+                        <i data-lucide="brain" class="w-8 h-8 text-[#4A6FA5]"></i>
+                    </div>
+                    <h1 class="text-4xl font-bold text-[#1A1A1A]">Machine Learning & AI</h1>
+                </div>
+                <p class="text-xl text-gray-600">Exploring the intersection of artificial intelligence, business analytics, and practical applications.</p>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 section-divide pb-12">
+                <!-- Key Focus Areas -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-8">Key Focus Areas</h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-medium mb-2">Predictive Analytics</h3>
+                                <p class="text-gray-600">Developing models to forecast business trends and customer behavior patterns.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-medium mb-2">Natural Language Processing</h3>
+                                <p class="text-gray-600">Implementing NLP solutions for automated customer service and document analysis.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h3 class="font-medium mb-2">Computer Vision</h3>
+                                <p class="text-gray-600">Utilizing image recognition for quality control and process automation.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-8">Tools & Technologies</h2>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border-l-2 border-[#4A6FA5] pl-4">
+                            <h3 class="font-medium mb-2">Python Ecosystem</h3>
+                            <p class="text-gray-600">TensorFlow, PyTorch, scikit-learn</p>
+                        </div>
+                        <div class="border-l-2 border-[#4A6FA5] pl-4">
+                            <h3 class="font-medium mb-2">Cloud Platforms</h3>
+                            <p class="text-gray-600">AWS SageMaker, Google AI Platform</p>
+                        </div>
+                        <div class="border-l-2 border-[#4A6FA5] pl-4">
+                            <h3 class="font-medium mb-2">Big Data Tools</h3>
+                            <p class="text-gray-600">Spark ML, Hadoop Ecosystem</p>
+                        </div>
+                        <div class="border-l-2 border-[#4A6FA5] pl-4">
+                            <h3 class="font-medium mb-2">Visualization</h3>
+                            <p class="text-gray-600">Matplotlib, Seaborn, Plotly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Project -->
+            <div>
+                <h2 class="text-2xl font-semibold mb-8">Featured Project</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-xl font-medium mb-4">Wally AI Project</h3>
+                        <p class="text-gray-600 mb-6">Developed and implemented a machine learning model to predict customer churn with 85% accuracy, enabling proactive retention strategies.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-[#4A6FA5] mr-3"></i>
+                                <span>Reduced customer churn by 25%</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-[#4A6FA5] mr-3"></i>
+                                <span>Implemented automated early warning system</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-[#4A6FA5] mr-3"></i>
+                                <span>Integrated with CRM for real-time predictions</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-block px-6 py-3 bg-[#FF9F5B] text-white rounded-lg hover:bg-[#ff8f43] transition-colors">
+                            View Project Details
+                        </a>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#4A6FA5]/5 to-transparent rounded-lg"></div>
+                        <img src="/api/placeholder/600/400" alt="Project visualization" class="w-full rounded-lg"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide icons
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
