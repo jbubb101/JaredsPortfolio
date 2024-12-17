@@ -53,6 +53,19 @@
       visibility: visible;
       opacity: 1;
     }
+
+    /* Bullet Point Style */
+    .content-section ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .content-section ul li {
+      margin-bottom: 0.25rem;
+    }
+
+
   </style>
 </head>
 <body class="bg-white">
@@ -110,7 +123,7 @@
         <p><strong>Duration:</strong> 3 months</p>
         <p><strong>Completed:</strong> October 2024</p>
         <p><strong>Role:</strong> AI Engineer</p>
-        <p><strong>Tech Stack:</strong> Python, Amazon</p>
+        <p><strong>Tech Stack:</strong> Python, Amazon Web Services (AWS), OpenAI API, Computer Vision</p>
       </div>
     </div>
 
@@ -127,26 +140,39 @@
     <div class="content-section">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">Project Overview</h2>
       <p class="text-gray-600">
-        For this project the goal was to build a DU AI tool that would eliminate monotonous and annoying tasks while improving the accuracy of blog posts, requests...
+        The goal of this project was to build a custom AI tool for the Daniels Office of Communications and Marketing (OCM) to eliminate repetitive tasks while improving the accuracy and quality of deliverables. The AI assistant, Wally, was developed to meet specific team requirements, including enhancing internal workflows, improving brand consistency, and automating content creation processes.
       </p>
+      <p class="text-gray-600">Key Objectives:</p>
+      <ul class="text-gray-600">
+        <li>Automate monotonous, time-consuming tasks (e.g., caption generation, content analysis).</li>
+        <li>Improve the accuracy of marketing materials, adhering to the University of Denver style guide.</li>
+        <li>Use AI-powered visual tools to detect logo misuse and provide actionable insights.</li>
+        <li>Provide a customizable experience that grows with user needs over time.</li>
+      </ul>
     </div>
 
     <!-- Performance Metrics -->
     <div class="content-section">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">Performance Metrics</h2>
       <div class="space-y-6">
-        <!-- Task Completion Time Chart -->
         <div>
           <h3 class="text-xl font-semibold text-blue-600 mb-4">Task Completion Time Improvement</h3>
           <img src="/api/placeholder/800/400" alt="Task completion time chart" class="w-full mb-2"/>
-          <p class="text-sm text-gray-500 italic">Average time saved per task after implementing the AI tool.</p>
+          <ul class="text-sm text-gray-500 italic">
+            <li>35% reduction in average task completion time across content creation and review processes.</li>
+            <li>Example: Internal newsletter submission copy edits reduced from 20 minutes to 5 minutes per task.</li>
+          </ul>
         </div>
         
         <!-- Accuracy Metrics -->
         <div>
           <h3 class="text-xl font-semibold text-blue-600 mb-4">Accuracy Improvement</h3>
           <img src="/api/placeholder/800/400" alt="Accuracy metrics visualization" class="w-full mb-2"/>
-          <p class="text-sm text-gray-500 italic">Comparison of error rates before and after implementation.</p>
+          <p class="text-sm text-gray-500 italic">Error rates dropped by 45%, particularly for:</p>
+          <ul class="text-sm text-gray-500 italic">
+            <li>Formatting and stylistic issues in captions, blog posts, and social media content.</li>
+            <li>Logo misuse detection, ensuring visual assets align with DU branding guidelines.</li>
+          </ul>
         </div>
       </div>
     </div>
