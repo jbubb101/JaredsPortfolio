@@ -102,6 +102,22 @@
         .interactive-button:hover .arrow {
             transform: translateX(2px);
         }
+
+        /* Mobile menu code */
+        .mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+            visibility: hidden;
+            opacity: 0;
+            z-index: 40;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            visibility: visible;
+            opacity: 1;
+        }
+        
     </style>
 </head>
 
@@ -122,10 +138,27 @@
                     </div>
                 </div>
 
+                <!-- Replace the existing mobile menu button with this -->
                 <div class="sm:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
-                        <i data-lucide="menu"></i>
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors duration-200" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
                     </button>
+                </div>
+
+                <!-- Add this right after the button -->
+                <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-[#F8F6F2] shadow-lg sm:hidden">
+                    <div class="px-4 py-2 divide-y divide-gray-200">
+                        <a href="index.html#home" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Home</a>
+                        <a href="index.html#interests" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Interests</a>
+                        <a href="index.html#projects" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Projects</a>
+                        <a href="index.html#contact" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Contact</a>
+                        <a href="assets/resume.pdf" target="_blank" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Resume</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -152,7 +185,7 @@
                     </div>
                     <h1 class="text-4xl font-bold text-[#1A1A1A]">Data Visualization</h1>
                 </div>
-                <p class="text-xl text-gray-600">Transforming complex data into clear, actionable insights through innovative visual storytelling.</p>
+                <p class="text-xl text-gray-600">Transforming complex data into clear, actionable insights through engaging visual storytelling.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 section-divide pb-12">
@@ -194,15 +227,15 @@
                     <div class="grid grid-cols-2 gap-6">
                         <div class="border-l-2 border-[#4A6FA5] pl-4 hover:bg-white/50 transition-colors rounded-r-lg p-4">
                             <h3 class="font-medium mb-2">Visualization Libraries</h3>
-                            <p class="text-gray-600">D3.js, Plotly, Highcharts</p>
+                            <p class="text-gray-600">Matplotlib, Plotly</p>
                         </div>
                         <div class="border-l-2 border-[#4A6FA5] pl-4 hover:bg-white/50 transition-colors rounded-r-lg p-4">
                             <h3 class="font-medium mb-2">BI Tools</h3>
-                            <p class="text-gray-600">Tableau, Power BI, Looker</p>
+                            <p class="text-gray-600">Tableau, Power BI</p>
                         </div>
                         <div class="border-l-2 border-[#4A6FA5] pl-4 hover:bg-white/50 transition-colors rounded-r-lg p-4">
                             <h3 class="font-medium mb-2">Design Tools</h3>
-                            <p class="text-gray-600">Adobe XD, Figma, Sketch</p>
+                            <p class="text-gray-600">LucidCharts, Figma, Sketch</p>
                         </div>
                         <div class="border-l-2 border-[#4A6FA5] pl-4 hover:bg-white/50 transition-colors rounded-r-lg p-4">
                             <h3 class="font-medium mb-2">Data Processing</h3>
@@ -247,5 +280,42 @@
             </div>
         </div>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
+            let isMenuOpen = false;
+    
+            if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
+                function toggleMenu() {
+                    isMenuOpen = !isMenuOpen;
+                    mobileMenu.classList.toggle('active');
+                    hamburgerIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', isMenuOpen);
+                }
+    
+                mobileMenuButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+    
+                // Close menu when clicking a link
+                const menuLinks = mobileMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', toggleMenu);
+                });
+    
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                        toggleMenu();
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
