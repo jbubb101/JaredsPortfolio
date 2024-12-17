@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics - Jared Briggs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F6F2;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #4A6FA5;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .section-divide {
+            position: relative;
+        }
+        .section-divide::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+        }
+        .focus-area {
+            transition: transform 0.2s ease;
+        }
+        .focus-area:hover {
+            transform: translateX(8px);
+        }
+        .interactive-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .interactive-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .interactive-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 159, 91, 0.3);
+        }
+        
+        .interactive-button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .interactive-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 6px rgba(255, 159, 91, 0.2);
+        }
+        
+        .interactive-button .button-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+        
+        .interactive-button:hover .button-content {
+            gap: 0.75rem;
+        }
+        
+        .interactive-button .arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .interactive-button:hover .arrow {
+            transform: translateX(2px);
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8F6F2]">
+    <header class="fixed top-0 left-0 right-0 bg-[#F8F6F2] shadow-sm z-50">
+        <nav class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-semibold text-[#1A1A1A] tracking-wide">J. Briggs</a>
+                </div>
+                
+                <div class="hidden sm:block">
+                    <div class="flex space-x-12">
+                        <a href="index.html#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Home</a>
+                        <a href="index.html#interests" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Interests</a>
+                        <a href="index.html#projects" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Projects</a>
+                        <a href="index.html#contact" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Contact</a>
+                    </div>
+                </div>
+
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="mb-12">
+                <ol class="flex items-center space-x-2 text-gray-600">
+                    <li><a href="index.html" class="hover:text-[#4A6FA5]">Home</a></li>
+                    <li><span class="mx-2">/</span></li>
+                    <li><a href="index.html#interests" class="hover:text-[#4A6FA5]">Areas of Interest</a></li>
+                    <li><span class="mx-2">/</span></li>
+                    <li class="text-[#4A6FA5]">Data Analytics</li>
+                </ol>
+            </nav>
+
+            <div class="mb-16 section-divide pb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-[#4A6FA5] bg-opacity-10 rounded-full flex items-center justify-center mr-6">
+                        <div class="icon-container">
+                            <i data-lucide="database" class="w-8 h-8 text-[#4A6FA5]"></i>
+                        </div>
+                    </div>
+                    <h1 class="text-4xl font-bold text-[#1A1A1A]">Data Analytics</h1>
+                </div>
+                <p class="text-xl text-gray-600">Transforming raw data into actionable business insights through advanced analytics and strategic problem-solving.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 section-divide pb-12">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-8">Key Focus Areas</h2>
+                    <ul class="space-y-6">
+                        <li class="focus-area flex items-start group">
+                            <div class="w-6 h-6 mr-4 flex-shrink-0 mt-1">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-[#4A6FA5] group-hover:text-green-500 transition-colors"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium mb-2">Predictive Modeling</h3>
+                                <p class="text-gray-600">Building statistical models to forecast trends and optimize business decisions.</p>
+                            </div>
+                        </li>
+                        <li class="focus-area flex items-start group">
+                            <div class="w-6 h-6 mr-4 flex-shrink-0 mt-1">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-[#4A6FA5] group-hover:text-green-500 transition-colors"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium mb-2">Business Intelligence</h3>
+                                <p class="text-gray-600">Designing and implementing data warehouses and reporting solutions for strategic insights.</p>
+                            </div>
+                        </li>
+                        <li class="focus-area flex items-start group">
+                            <div class="w-6 h-6 mr-4 flex-shrink-0 mt-1">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-[#4A6FA5] group-hover:text-green-500 transition-colors"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium mb-2">Process Optimization</h3>
+                                <p class="text-gray-600">Analyzing operational data to streamline workflows and improve efficiency.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-8">Tools & Technologies</h2>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border-l-2 border-[#4A6FA5] pl-4 hover:bg-white/50 transition-colors rounded-r-lg p-4">
+                            <h3 class="font-medium mb-2">Data Processing</h3>
+                            <p class="text-gray-600">Python, R, SQL, Spark</p>
+                        </div>
+                        <div class="border-l-2 border-[#4A6FA5] pl-4 hover:bg-white/50 transition-colors rounded-r-lg p-4">
+                            <h3 class="font-medium mb-2">Visualization</h3>
+                            <p class="text-gray-600">Tableau, Power BI, D3.js</p>
+                        </div>
+                        <div class="border-l-2 border-[#4A6FA5] pl-4 hover:bg-white/50 transition-colors rounded-r-lg p-4">
+                            <h3 class="font-medium mb-2">Cloud Platforms</h3>
+                            <p class="text-gray-600">AWS, GCP, Azure</p>
+                        </div>
+                        <div class="border-l-2 border-[#4A6FA5] pl-4 hover:bg-white/50 transition-colors rounded-r-lg p-4">
+                            <h3 class="font-medium mb-2">Statistical Tools</h3>
+                            <p class="text-gray-600">SAS, SPSS, Stata</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-8">Featured Project</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-xl font-medium mb-4">Supply Chain Optimization</h3>
+                        <p class="text-gray-600 mb-6">Developed an end-to-end analytics solution for optimizing inventory management and distribution networks, resulting in significant cost savings.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-[#4A6FA5] mr-3"></i>
+                                <span>20% reduction in inventory costs</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-[#4A6FA5] mr-3"></i>
+                                <span>Automated demand forecasting</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="w-5 h-5 text-[#4A6FA5] mr-3"></i>
+                                <span>Real-time performance monitoring</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="interactive-button inline-block px-6 py-3 bg-[#FF9F5B] text-white rounded-lg">
+                            <span class="button-content">
+                                View Analysis
+                                <i data-lucide="arrow-right" class="w-4 h-4 arrow"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#4A6FA5]/5 to-transparent rounded-lg"></div>
+                        <img src="/api/placeholder/600/400" alt="Supply chain analytics dashboard" class="w-full rounded-lg"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
