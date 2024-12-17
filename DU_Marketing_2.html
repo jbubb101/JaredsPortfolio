@@ -165,8 +165,8 @@
 </head>
 <body class="bg-white">
   <!-- Navigation Bar -->
-  <nav class="bg-white border-b border-gray-200">
-    <div class="max-w-4xl mx-auto px-6">
+  <nav class="bg-white border-b border-gray-200 relative">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div class="flex justify-between items-center h-16">
             <div class="text-xl font-bold text-gray-800">
                 <a href="index.html">J. Briggs</a>
@@ -174,39 +174,39 @@
             
             <!-- Desktop Menu -->
             <div class="hidden sm:block">
-                <div class="flex space-x-12">
-                    <a href="index.html#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Home</a>
-                    <a href="index.html#interests" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Interests</a>
-                    <a href="index.html#projects" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Projects</a>
-                    <a href="index.html#contact" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Contact</a>
-                    <a href="assets/resume.pdf" target="_blank" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Resume</a>
-                </div>
-            </div>
+              <div class="flex space-x-12">
+                  <a href="index.html#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Home</a>
+                  <a href="index.html#interests" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Interests</a>
+                  <a href="index.html#projects" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Projects</a>
+                  <a href="index.html#contact" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Contact</a>
+                  <a href="assets/resume.pdf" target="_blank" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Resume</a>
+              </div>
+          </div>
 
             <!-- Mobile Menu Button -->
             <div class="sm:hidden">
-                <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors duration-200" aria-expanded="false" aria-label="Toggle navigation">
-                    <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                    <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
+              <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors duration-200" aria-expanded="false" aria-label="Toggle navigation">
+                  <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                  <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+              </button>
+          </div>
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-white shadow-lg sm:hidden">
-                <div class="px-4 py-2 divide-y divide-gray-200">
-                    <a href="index.html#home" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Home</a>
-                    <a href="index.html#interests" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Interests</a>
-                    <a href="index.html#projects" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Projects</a>
-                    <a href="index.html#contact" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Contact</a>
-                    <a href="assets/resume.pdf" target="_blank" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Resume</a>
-                </div>
-            </div>
-        </div>
-    </div>
+              <div class="px-4 py-2 divide-y divide-gray-200">
+                  <a href="index.html#home" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Home</a>
+                  <a href="index.html#interests" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Interests</a>
+                  <a href="index.html#projects" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Projects</a>
+                  <a href="index.html#contact" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Contact</a>
+                  <a href="assets/resume.pdf" target="_blank" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Resume</a>
+              </div>
+          </div>
+      </div>
+  </div>
 </nav>
 
   <!-- Blog Post Content -->
