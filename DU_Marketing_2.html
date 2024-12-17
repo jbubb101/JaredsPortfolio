@@ -65,6 +65,53 @@
       margin-bottom: 0.25rem;
     }
 
+    /* Enhanced spacing for sections and headings */
+    .content-section {
+      border-bottom: 1px solid #eaeaea;
+      padding: 2.5rem 0;  /* Increased padding */
+    }
+
+    /* Large heading spacing (h1, h2) */
+    .text-4xl, .text-2xl {
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Medium heading spacing (h3) */
+    .text-xl {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Enhanced bullet point styling and spacing */
+    .content-section ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+      margin-top: 1.25rem;     /* Increased top margin */
+      margin-bottom: 1.75rem;  /* Increased bottom margin */
+      padding-left: 0.5rem;    /* Added padding for better alignment */
+    }
+
+    .content-section ul li {
+      margin-bottom: 0.75rem;  /* Increased spacing between list items */
+      line-height: 1.5;       /* Improved line height for readability */
+    }
+
+    /* Spacing for paragraphs before lists */
+    .content-section p + ul {
+      margin-top: 1rem;      /* Specific spacing when paragraph precedes list */
+    }
+
+    /* Spacing for headings before lists */
+    .content-section h3 + ul {
+      margin-top: 0.75rem;   /* Specific spacing when heading precedes list */
+    }
+
+    /* Add space after the last list item if followed by text */
+    .content-section ul + p {
+      margin-top: 1.5rem;    /* Space after list when followed by paragraph */
+    }
+
 
   </style>
 </head>
