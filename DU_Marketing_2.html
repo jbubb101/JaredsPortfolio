@@ -38,22 +38,68 @@
       width: 100%;
       height: 100%;
     }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 40;
+    }
+
+    .mobile-menu.active {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
   </style>
 </head>
 <body class="bg-white">
   <!-- Navigation Bar -->
   <nav class="bg-white border-b border-gray-200">
     <div class="max-w-4xl mx-auto px-6">
-      <div class="grid grid-cols-2 h-16 items-center">
-        <div class="text-xl font-bold text-gray-800">Portfolio</div>
-        <div class="text-right space-x-8">
-          <a href="#" class="nav-link text-gray-600 hover:text-blue-600">Home</a>
-          <a href="#" class="nav-link text-gray-600 hover:text-blue-600">Projects</a>
-          <a href="#" class="nav-link text-gray-600 hover:text-blue-600">Contact</a>
+        <div class="flex justify-between items-center h-16">
+            <div class="text-xl font-bold text-gray-800">
+                <a href="index.html">J. Briggs</a>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden sm:block">
+                <div class="flex space-x-12">
+                    <a href="index.html#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Home</a>
+                    <a href="index.html#interests" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Interests</a>
+                    <a href="index.html#projects" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Projects</a>
+                    <a href="index.html#contact" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Contact</a>
+                    <a href="assets/resume.pdf" target="_blank" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium">Resume</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="sm:hidden">
+                <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors duration-200" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-white shadow-lg sm:hidden">
+                <div class="px-4 py-2 divide-y divide-gray-200">
+                    <a href="index.html#home" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Home</a>
+                    <a href="index.html#interests" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Interests</a>
+                    <a href="index.html#projects" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Projects</a>
+                    <a href="index.html#contact" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Contact</a>
+                    <a href="assets/resume.pdf" target="_blank" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Resume</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </nav>
+</nav>
 
   <!-- Blog Post Content -->
   <main class="max-w-4xl mx-auto px-6 py-12">
@@ -162,5 +208,42 @@
       </div>
     </div>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        let isMenuOpen = false;
+
+        if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.classList.toggle('active');
+                hamburgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', isMenuOpen);
+            }
+
+            mobileMenuButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMenu();
+            });
+
+            // Close menu when clicking a link
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    toggleMenu();
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
