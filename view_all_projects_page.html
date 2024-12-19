@@ -69,6 +69,12 @@
             opacity: 1;
             transition: opacity 0.3s ease;
         }
+
+        /* New style for view details link to always stay at bottom */
+        .view-details-link {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -115,55 +121,71 @@
                 <button class="filter-button px-6 py-2 bg-white text-[#4A6FA5] rounded-full hover:bg-gray-100 transition-colors" data-category="system-design">System Design</button>
             </div>
 
-        <!-- Projects Grid -->
-        <div class="project-grid">
-            <!-- DU AI Tool Project -->
-            <div class="project-card" data-category="process-optimization">
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg h-full">
-                    <div class="h-48 bg-white flex items-center justify-center p-4">
-                        <img src="project_assets/DU_new_logo.jpg" alt="DU AI Tool" class="w-auto h-auto max-w-full max-h-full object-contain"/>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Process Optimization</span>
-                            <span class="text-sm text-gray-500">2024</span>
+            <!-- Projects Grid with standardized cards -->
+            <div class="project-grid">
+                <!-- DU AI Tool Project -->
+                <div class="project-card" data-category="process-optimization">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="h-48 bg-white flex items-center justify-center p-4">
+                            <img src="project_assets/DU_new_logo.jpg" 
+                                alt="DU AI Tool" 
+                                class="w-auto h-auto max-w-[85%] max-h-[85%] object-contain"/>
                         </div>
-                        <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">DU AI Tool</h3>
-                        <p class="text-gray-600 mb-4">Led the analysis and implementation of a new ERP system, resulting in 40% efficiency improvement.</p>
-                        <a href="DU_Marketing_2.html" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">View Details →</a>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Process Optimization</span>
+                                <span class="text-sm text-gray-500">2024</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">DU AI Tool</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-2">Led the analysis and implementation of a new ERP system, resulting in 40% efficiency improvement and streamlined workflows across departments.</p>
+                            <a href="DU_Marketing_2.html" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">
+                                View Details →
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
                 <!-- Rivian Project -->
                 <div class="project-card" data-category="data-analytics">
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="Rivian_Assets/Rivian_Logo_Resized.jpg" alt="Rivian Project" class="w-auto h-auto max-w-full max-h-full object-contain"/>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Data Analytics</span>
-                            <span class="text-sm text-gray-500">2024</span>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="h-48 bg-white flex items-center justify-center p-4">
+                            <img src="Rivian_Assets/Rivian_Logo_Resized.jpg" 
+                                alt="Rivian Project" 
+                                class="w-auto h-auto max-w-[85%] max-h-[85%] object-contain"/>
                         </div>
-                        <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Customer Journey Analytics</h3>
-                        <p class="text-gray-600 mb-4">Developed comprehensive customer journey maps and analytics dashboard for key stakeholders.</p>
-                        <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">View Details →</a>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Data Analytics</span>
+                                <span class="text-sm text-gray-500">2024</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Customer Journey Analytics</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-2">Developed comprehensive customer journey maps and analytics dashboard for key stakeholders, improving customer insights by 35%.</p>
+                            <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">
+                                View Details →
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Claritas Project -->
                 <div class="project-card" data-category="system-design">
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="Claritas_Assets/Claritas-Logo-for-Site.png" alt="Claritas Project" class="w-auto h-auto max-w-full max-h-full object-contain"/>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">System Design</span>
-                            <span class="text-sm text-gray-500">2023</span>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="h-48 bg-white flex items-center justify-center p-4">
+                            <img src="Claritas_Assets/Claritas-Logo-for-Site.png" 
+                                alt="Claritas Project" 
+                                class="w-auto h-auto max-w-[85%] max-h-[85%] object-contain"/>
                         </div>
-                        <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Claritas PersonaAI</h3>
-                        <p class="text-gray-600 mb-4">Automated critical business processes reducing manual work by 65% and improving accuracy.</p>
-                        <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">View Details →</a>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">System Design</span>
+                                <span class="text-sm text-gray-500">2023</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Claritas PersonaAI</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-2">Automated critical business processes reducing manual work by 65% and improving accuracy through AI-driven solutions.</p>
+                            <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">
+                                View Details →
+                            </a>
+                        </div>
                     </div>
                 </div>
 
