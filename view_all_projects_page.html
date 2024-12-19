@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Jared Briggs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+ body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F6F2;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #4A6FA5;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .project-card {
+            opacity: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .filter-button {
+            transition: all 0.3s ease;
+        }
+        .filter-button.active {
+            background-color: #4A6FA5;
+            color: white;
+        }
+        .project-card.fade-out {
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+        }
+        .project-card.hidden {
+            display: none;
+        }
+        .icon-wrapper {
+            background-color: rgba(74, 111, 165, 0.1);
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (Same as main page) -->
+    <header class="fixed top-0 left-0 right-0 bg-[#F8F6F2] shadow-md z-50"></header>
+        <nav class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <h1 class="text-2xl font-semibold text-[#1A1A1A] tracking-wide">J. Briggs</h1>
+                    </a>
+                </div>
+                <div class="hidden sm:block">
+                    <div class="flex space-x-12">
+                        <a href="index.html#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Home</a>
+                        <a href="index.html#interests" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Interests</a>
+                        <a href="#" class="nav-link text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Projects</a>
+                        <a href="index.html#contact" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Contact</a>
+                        <a href="assets/resume.pdf" target="_blank" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Resumé</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Projects Header Section -->
+    <section class="pt-32 pb-16 bg-[#F3F1F9]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-[#1A1A1A] mb-4">My Projects Portfolio</h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">A comprehensive collection of my work in business analysis, data visualization, and system optimization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Categories and Grid -->
+    <section class="py-12 bg-[#F3F1F9]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-button active px-6 py-2 bg-[#4A6FA5] text-white rounded-full transition-colors" data-category="all">All Projects</button>
+                <button class="filter-button px-6 py-2 bg-white text-[#4A6FA5] rounded-full hover:bg-gray-100 transition-colors" data-category="process-optimization">Process Optimization</button>
+                <button class="filter-button px-6 py-2 bg-white text-[#4A6FA5] rounded-full hover:bg-gray-100 transition-colors" data-category="data-analytics">Data Analytics</button>
+                <button class="filter-button px-6 py-2 bg-white text-[#4A6FA5] rounded-full hover:bg-gray-100 transition-colors" data-category="system-design">System Design</button>
+            </div>
+
+        <!-- Projects Grid -->
+        <div class="project-grid">
+            <!-- DU AI Tool Project -->
+            <div class="project-card" data-category="process-optimization">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg h-full">
+                    <div class="h-48 bg-white flex items-center justify-center p-4">
+                        <img src="project_assets/DU_new_logo.jpg" alt="DU AI Tool" class="w-auto h-auto max-w-full max-h-full object-contain"/>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Process Optimization</span>
+                            <span class="text-sm text-gray-500">2024</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">DU AI Tool</h3>
+                        <p class="text-gray-600 mb-4">Led the analysis and implementation of a new ERP system, resulting in 40% efficiency improvement.</p>
+                        <a href="DU_Marketing_2.html" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">View Details →</a>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Rivian Project -->
+                <div class="project-card" data-category="data-analytics">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img src="Rivian_Assets/Rivian_Logo_Resized.jpg" alt="Rivian Project" class="w-auto h-auto max-w-full max-h-full object-contain"/>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Data Analytics</span>
+                            <span class="text-sm text-gray-500">2024</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Customer Journey Analytics</h3>
+                        <p class="text-gray-600 mb-4">Developed comprehensive customer journey maps and analytics dashboard for key stakeholders.</p>
+                        <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Claritas Project -->
+                <div class="project-card" data-category="system-design">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img src="Claritas_Assets/Claritas-Logo-for-Site.png" alt="Claritas Project" class="w-auto h-auto max-w-full max-h-full object-contain"/>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">System Design</span>
+                            <span class="text-sm text-gray-500">2023</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Claritas PersonaAI</h3>
+                        <p class="text-gray-600 mb-4">Automated critical business processes reducing manual work by 65% and improving accuracy.</p>
+                        <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Additional Project Cards (you can add more) -->
+                <!-- NPR Project -->
+                <div class="project-card" data-category="data-analytics">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                        <img src="project_assets/NPR-logo.png" alt="NPR Project" class="w-auto h-auto max-w-full max-h-full object-contain"/>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Data Analytics</span>
+                            <span class="text-sm text-gray-500">2023</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Audience Analytics Platform</h3>
+                        <p class="text-gray-600 mb-4">Developed analytics dashboard for tracking audience engagement and content performance.</p>
+                        <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize icons
+            lucide.createIcons();
+
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const projectCards = document.querySelectorAll('.project-card');
+            const projectGrid = document.querySelector('.project-grid');
+
+            let isAnimating = false;
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', async () => {
+                    if (isAnimating) return;
+                    isAnimating = true;
+
+                    // Update button styles
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-[#4A6FA5]', 'text-white');
+                        btn.classList.add('bg-white', 'text-[#4A6FA5]');
+                    });
+                    button.classList.add('active', 'bg-[#4A6FA5]', 'text-white');
+                    button.classList.remove('bg-white', 'text-[#4A6FA5]');
+
+                    const category = button.dataset.category;
+
+                    // Fade out all cards
+                    projectGrid.style.opacity = '0';
+
+                    // Wait for fade out
+                    await new Promise(resolve => setTimeout(resolve, 300));
+
+                    // Update visibility
+                    projectCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+
+                    // Fade in visible cards
+                    projectGrid.style.opacity = '1';
+
+                    // Reinitialize Lucide icons after the transition
+                    setTimeout(() => {
+                        lucide.createIcons();
+                        isAnimating = false;
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
