@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Template</title>
+    <!-- Required Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Header-specific styles */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #4A6FA5;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+            visibility: hidden;
+            opacity: 0;
+            z-index: 40;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Template Start -->
+    <header class="fixed top-0 left-0 right-0 bg-[#F8F6F2] shadow-md z-50">
+        <nav class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-semibold text-[#1A1A1A] tracking-wide">
+                        J. Briggs
+                    </h1>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden sm:block">
+                    <div class="flex space-x-12">
+                        <a href="#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Home</a>
+                        <a href="#interests" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Interests</a>
+                        <a href="#projects" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Projects</a>
+                        <a href="#contact" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Contact</a>
+                        <a href="assets/resume.pdf" target="_blank" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Resumé</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-3 rounded-md text-[#1A1A1A] hover:text-[#4A6FA5]" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Hamburger icon -->
+                        <svg id="hamburger-icon" class="h-8 w-8 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Close icon -->
+                        <svg id="close-icon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu items -->
+            <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-[#F8F6F2] shadow-lg sm:hidden">
+                <div class="px-4 py-2 divide-y divide-gray-200">
+                    <a href="#home" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Home</a>
+                    <a href="#interests" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Interests</a>
+                    <a href="#projects" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Projects</a>
+                    <a href="#contact" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Contact</a>
+                    <a href="assets/resume.pdf" target="_blank" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Resume</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Header Template End -->
+
+    <!-- Content Section (for demonstration) -->
+    <main class="pt-20">
+        <!-- Your page content goes here -->
+    </main>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
+            let isMenuOpen = false;
+
+            if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
+                function toggleMenu() {
+                    isMenuOpen = !isMenuOpen;
+                    mobileMenu.classList.toggle('active');
+                    hamburgerIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', isMenuOpen);
+                }
+
+                mobileMenuButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+
+                // Close menu when clicking a link
+                const menuLinks = mobileMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', toggleMenu);
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                        toggleMenu();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
