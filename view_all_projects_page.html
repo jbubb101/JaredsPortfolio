@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
     <style>
- body {
+        body {
             font-family: 'Inter', sans-serif;
             background-color: #F8F6F2;
         }
@@ -31,12 +31,8 @@
         }
         .project-card {
             opacity: 1;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
         }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
+
         .filter-button {
             transition: all 0.3s ease;
         }
@@ -192,20 +188,25 @@
                 <!-- Additional Project Cards (you can add more) -->
                 <!-- NPR Project -->
                 <div class="project-card" data-category="data-analytics">
-                    <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                        <img src="project_assets/NPR-logo.png" alt="NPR Project" class="w-auto h-auto max-w-full max-h-full object-contain"/>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Data Analytics</span>
-                            <span class="text-sm text-gray-500">2023</span>
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="h-48 bg-white flex items-center justify-center p-4">
+                            <img src="project_assets/NPR-logo.png" 
+                                alt="NPR Project" 
+                                class="w-auto h-auto max-w-[85%] max-h-[85%] object-contain"/>
                         </div>
-                        <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Audience Analytics Platform</h3>
-                        <p class="text-gray-600 mb-4">Developed analytics dashboard for tracking audience engagement and content performance.</p>
-                        <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">View Details →</a>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-sm font-medium text-[#4A6FA5] bg-[#4A6FA5] bg-opacity-10 px-3 py-1 rounded-full">Data Analytics</span>
+                                <span class="text-sm text-gray-500">2023</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-[#1A1A1A] mb-2">Audience Analytics Platform</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-2">Developed analytics dashboard for tracking audience engagement and content performance.</p>
+                            <a href="#" class="inline-block text-[#4A6FA5] hover:text-[#FF9F5B] font-medium transition-colors duration-200">
+                                View Details →
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
 

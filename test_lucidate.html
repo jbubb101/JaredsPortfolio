@@ -2,132 +2,149 @@
 <html>
 <head>
     <style>
-        .areas-of-interest {
-            background-color: #F8F6F2;
-            padding: 5rem 0;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #F3F1F9;
+            font-family: Inter, system-ui, sans-serif;
         }
-        .interest-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        .icon-wrapper {
-            margin-bottom: 1rem;
-            color: #2563eb;
-        }
-        .grid-container {
+
+        .project-grid {
             display: grid;
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, minmax(300px, 1fr));
             gap: 2rem;
-            max-width: 80rem;
-            margin: 0 auto;
-            padding: 0 1rem;
+            padding: 2rem;
+            max-width: 1200px;
         }
-        @media (min-width: 768px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+
+        .project-card {
+            opacity: 1;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        @media (min-width: 1024px) {
-            .grid-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
+
+        .card-content {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .text-center {
-            text-align: center;
-            margin-bottom: 4rem;
+
+        .project-card:hover .card-content {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .section-title {
-            font-size: 1.875rem;
-            font-weight: 600;
-            color: #1A1A1A;
-            margin-bottom: 1rem;
+
+        .image-container {
+            height: 12rem;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
         }
-        .section-subtitle {
-            color: #666;
+
+        .image-placeholder {
+            width: 85%;
+            height: 85%;
+            background: #4A6FA5;
+            opacity: 0.1;
+            border-radius: 0.25rem;
         }
-        .learn-more-btn {
-            color: #2563eb;
-            text-decoration: none;
+
+        .card-body {
+            padding: 1.5rem;
         }
-        .learn-more-btn:hover {
-            color: #1d4ed8;
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
         }
-        h3 {
+
+        .tag {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #4A6FA5;
+            background-color: rgba(74, 111, 165, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+        }
+
+        .date {
+            font-size: 0.875rem;
+            color: #6B7280;
+        }
+
+        .title {
             font-size: 1.25rem;
             font-weight: 600;
+            color: #1A1A1A;
             margin-bottom: 0.5rem;
         }
-        p {
-            color: #666;
+
+        .description {
+            color: #4B5563;
             margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .link {
+            color: #4A6FA5;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .link:hover {
+            color: #FF9F5B;
         }
     </style>
-    <!-- Lucide CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
-    <section class="areas-of-interest">
-        <div class="text-center">
-            <h2 class="section-title">Areas of Interest</h2>
-            <p class="section-subtitle">Take a look at some of the things I love working on.</p>
-        </div>
-
-        <div class="grid-container">
-            <!-- Data Visualizations -->
-            <div class="interest-card">
-                <div class="icon-wrapper viz-icon-wrapper"><i data-lucide="bar-chart-2"></i></div>
-                <h3>Data Visualizations</h3>
-                <p>Crafting compelling visual representations of data to uncover insights, tell stories, and guide decision-making.</p>
-                <a href="/requirements-analysis" class="learn-more-btn">Learn More</a>
-            </div>
-
-            <!-- Health & Fitness -->
-            <div class="interest-card">
-                <div class="icon-wrapper health-icon-wrapper"><i data-lucide="cross"></i></div>
-                <h3>Health & Fitness</h3>
-                <p>Analyzing and optimizing health and fitness trends, building strategies for wellness initiatives, and leveraging data to improve health outcomes.</p>
-                <a href="/process-modeling" class="learn-more-btn">Learn More</a>
-            </div>
-
-            <!-- Data Analytics -->
-            <div class="interest-card">
-                <div class="icon-wrapper analytics-icon-wrapper"><i data-lucide="line-chart"></i></div>
-                <h3>Data Analytics</h3>
-                <p>Extracting meaningful patterns from raw data to solve problems, improve processes, and support strategic goals.</p>
-                <a href="/data-analytics" class="learn-more-btn">Learn More</a>
-            </div>
-
-            <!-- Machine Learning & AI -->
-            <div class="interest-card">
-                <div class="icon-wrapper ai-icon-wrapper"><i data-lucide="brain"></i></div>
-                <h3>Machine Learning & AI</h3>
-                <p>Developing intelligent systems that learn and adapt, applying predictive models, and automating tasks to drive innovation.</p>
-                <a href="/stakeholder-communication" class="learn-more-btn">Learn More</a>
-            </div>
-
-            <!-- Communication and Sales -->
-            <div class="interest-card">
-                <div class="icon-wrapper comm-icon-wrapper"><i data-lucide="message-circle"></i></div>
-                <h3>Communication and Sales</h3>
-                <p>Building relationships, presenting ideas effectively, and crafting tailored strategies to meet customer needs and achieve business objectives.</p>
-                <a href="/project-management" class="learn-more-btn">Learn More</a>
-            </div>
-
-            <!-- System Design -->
-            <div class="interest-card">
-                <div class="icon-wrapper system-icon-wrapper"><i data-lucide="network"></i></div>
-                <h3>System Design</h3>
-                <p>Designing and documenting system architectures and solutions to meet business requirements.</p>
-                <a href="/project-management" class="learn-more-btn">Learn More</a>
+    <div class="project-grid">
+        <!-- Card 1 -->
+        <div class="project-card">
+            <div class="card-content">
+                <div class="image-container">
+                    <div class="image-placeholder"></div>
+                </div>
+                <div class="card-body">
+                    <div class="card-header">
+                        <span class="tag">Process Optimization</span>
+                        <span class="date">2024</span>
+                    </div>
+                    <h3 class="title">Project Title</h3>
+                    <p class="description">A sample project description that demonstrates the card layout and hover effects. This text might be longer but will be clamped to two lines.</p>
+                    <a href="#" class="link">View Details →</a>
+                </div>
             </div>
         </div>
-    </section>
 
-    <script>
-        // Initialize Lucide
-        lucide.createIcons();
-    </script>
+        <!-- Card 2 -->
+        <div class="project-card">
+            <div class="card-content">
+                <div class="image-container">
+                    <div class="image-placeholder"></div>
+                </div>
+                <div class="card-body">
+                    <div class="card-header">
+                        <span class="tag">Data Analytics</span>
+                        <span class="date">2024</span>
+                    </div>
+                    <h3 class="title">Another Project</h3>
+                    <p class="description">Another sample project description to show how multiple cards work together. Hover over either card to see the effect.</p>
+                    <a href="#" class="link">View Details →</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
