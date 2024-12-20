@@ -29,10 +29,31 @@
         .nav-link:hover::after {
             width: 100%;
         }
+        /* Mobile menu styles */
+        .mobile-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            transform: translateY(-100%);
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            overflow: hidden;
+            z-index: 40;
+        }
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+            overflow: visible;
+        }
+        /* Project styles */
         .project-card {
             opacity: 1;
         }
-
         .filter-button {
             transition: all 0.3s ease;
         }
@@ -48,16 +69,6 @@
         .project-card.hidden {
             display: none;
         }
-        .icon-wrapper {
-            background-color: rgba(74, 111, 165, 0.1);
-            border-radius: 50%;
-            width: 64px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -65,8 +76,6 @@
             opacity: 1;
             transition: opacity 0.3s ease;
         }
-
-        /* New style for view details link to always stay at bottom */
         .view-details-link {
             margin-top: auto;
             padding-top: 1rem;
