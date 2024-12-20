@@ -74,15 +74,18 @@
     </style>
 </head>
 <body>
-    <!-- Header (Same as main page) -->
-    <header class="fixed top-0 left-0 right-0 bg-[#F8F6F2] shadow-md z-50"></header>
+    <!-- Header with Mobile Menu -->
+    <header class="fixed top-0 left-0 right-0 bg-[#F8F6F2] shadow-md z-50">
         <nav class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
             <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="index.html">
                         <h1 class="text-2xl font-semibold text-[#1A1A1A] tracking-wide">J. Briggs</h1>
                     </a>
                 </div>
+                
+                <!-- Desktop Navigation -->
                 <div class="hidden sm:block">
                     <div class="flex space-x-12">
                         <a href="index.html#home" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Home</a>
@@ -92,9 +95,37 @@
                         <a href="assets/resume.pdf" target="_blank" class="nav-link text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-3 text-base font-medium transition-colors duration-200">Resumé</a>
                     </div>
                 </div>
+
+                <!-- Mobile menu button -->
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-3 rounded-md text-[#1A1A1A] hover:text-[#4A6FA5]" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Hamburger icon -->
+                        <svg id="hamburger-icon" class="h-8 w-8 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Close icon -->
+                        <svg id="close-icon" class="h-8 w-8 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu items -->
+            <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-[#F8F6F2] shadow-lg sm:hidden">
+                <div class="px-4 py-2 divide-y divide-gray-200">
+                    <a href="index.html#home" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Home</a>
+                    <a href="index.html#interests" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Interests</a>
+                    <a href="#" class="block text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Projects</a>
+                    <a href="index.html#contact" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Contact</a>
+                    <a href="assets/resume.pdf" target="_blank" class="block text-[#1A1A1A] hover:text-[#4A6FA5] px-4 py-2 text-base font-medium transition-colors duration-200">Resumé</a>
+                </div>
             </div>
         </nav>
     </header>
+
+
 
     <!-- Projects Header Section -->
     <section class="pt-32 pb-16 bg-[#F3F1F9]">
@@ -211,12 +242,45 @@
     </section>
 
     <script>
-        // Initialize Lucide icons when the page loads
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize icons
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
+            let isMenuOpen = false;
+
+            if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
+                function toggleMenu() {
+                    isMenuOpen = !isMenuOpen;
+                    mobileMenu.classList.toggle('active');
+                    hamburgerIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', isMenuOpen);
+                }
+
+                mobileMenuButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+
+                // Close menu when clicking a link
+                const menuLinks = mobileMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', toggleMenu);
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                        toggleMenu();
+                    }
+                });
+            }
+
+            // Your existing projects filter functionality
             lucide.createIcons();
 
-            // Filter functionality
             const filterButtons = document.querySelectorAll('.filter-button');
             const projectCards = document.querySelectorAll('.project-card');
             const projectGrid = document.querySelector('.project-grid');
@@ -228,7 +292,6 @@
                     if (isAnimating) return;
                     isAnimating = true;
 
-                    // Update button styles
                     filterButtons.forEach(btn => {
                         btn.classList.remove('active', 'bg-[#4A6FA5]', 'text-white');
                         btn.classList.add('bg-white', 'text-[#4A6FA5]');
@@ -238,13 +301,10 @@
 
                     const category = button.dataset.category;
 
-                    // Fade out all cards
                     projectGrid.style.opacity = '0';
 
-                    // Wait for fade out
                     await new Promise(resolve => setTimeout(resolve, 300));
 
-                    // Update visibility
                     projectCards.forEach(card => {
                         if (category === 'all' || card.dataset.category === category) {
                             card.classList.remove('hidden');
@@ -253,10 +313,8 @@
                         }
                     });
 
-                    // Fade in visible cards
                     projectGrid.style.opacity = '1';
 
-                    // Reinitialize Lucide icons after the transition
                     setTimeout(() => {
                         lucide.createIcons();
                         isAnimating = false;
