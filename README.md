@@ -36,43 +36,28 @@ Bachelor of Science Business Administration – Business Information and Analyti
 <a name="profExp"></a>
 <hr>
 
-## Professional Experience
-<i>See my [LinkedIn](https://www.linkedin.com/in/jared-briggs-312704257/) or contact me at [jaredbriggs@gmail.com](mailto:jaredbriggs@gmail.com) | 702-467-2204</i>
+## My Professional Journey
+<i>Connect with me on [LinkedIn](https://www.linkedin.com/in/jared-briggs-312704257/) or reach out at [jaredbriggs@gmail.com](mailto:jaredbriggs@gmail.com)</i>
 
-### Claritas (Remote)
-**Intern — Data Analytics Group** (November 2024 - Present)
-- Streamlined Salesforce pipeline optimizing data flow enabling the use of generative AI
-- Worked on internal analytics focusing on customer retention & support, as well as evaluating employee performance
+### Data & AI Adventures
 
-### JTB Consulting (Denver & Reno)
-**Software Consultant** (February 2024 - Present)
-- Advised and consulted with more than six companies such as NPR, MMA Global, and J&J on artificial intelligence, machine learning, and automation
-- Managed client expectations and delivered recommendations on time, improving client satisfaction scores by 22%
+I've been fortunate to work at the intersection of data analytics and artificial intelligence across multiple organizations. Currently, I'm helping **Claritas** optimize their Salesforce pipeline for generative AI applications while diving deep into customer retention analytics.
 
-### Angel NV (Reno, Nevada)
-**Analyst** (October 2021 - Present)
-- Analyzed 100+ potential companies for investment and helped decide where 2+ million would be invested
-- Conducted complex risk analysis narrowing 100 companies down to 10
+My passion for AI solutions began at the **University of Denver** where I developed machine learning models that reduced write-up time by 25% while cutting errors in half. This experience led me to **Claritas** for a consulting role, where I built a custom RAG (Retrieval-Augmented Generation) internal tool that transformed their workflow efficiency by 50%.
 
-### YouTube (Denver, Colorado)
-**Content Creator & YouTube Partner** (June 2023 - Present)
-- Amassed over 47 million views in a month, with a single day record of 2.6 million views
-- Utilized machine learning models in conjunction with data modeling to achieve an average of 1,000+ new subscribers a day
+### Consulting Impact
 
-### University of Denver (Denver, Colorado)
-**AI Student Worker** (May 2024 - October 2024)
-- Created a mix of AI & machine learning models to make write ups 25% quicker with roughly 50% less errors
-- Collaborated with nine employees to capture optimal business requirements
+As a **Software Consultant at JTB Consulting**, I've advised major organizations including NPR, MMA Global, and Johnson & Johnson on implementing AI and automation strategies. By carefully managing client expectations and delivering actionable recommendations, we've improved client satisfaction scores by 22%.
 
-### Claritas (Reno, Nevada)
-**Consultant — AI & Machine Learning Group** (November 2023 - January 2024)
-- Utilized AI to build a custom RAG internal tool to streamline production & automate work leading to 50% task completion speed
-- Completed tasks 10% quicker than expected and presented final product to CEO
+During my time with **Brunswick**, I tackled massive datasets—segmenting over 10,000 data points and thousands of zip codes while streamlining existing pipelines to reduce data volume by approximately 35%.
 
-### Brunswick (Remote)
-**Consultant — Data Analytics Division** (November 2022 - December 2022)
-- Segmented 10,000+ data points and segmented 1000s of zip codes into custom segments
-- Utilized existing pipelines, streamlined data and reduced volume and load by roughly 35%
+### Investment Analysis
+
+Since 2021, I've been an **Analyst with Angel NV** in Reno, where I've evaluated more than 100 potential investment opportunities. My risk analysis work has helped direct over $2 million in investments, narrowing the field from 100 companies to the 10 most promising ventures.
+
+### Content Creation
+
+My analytical mindset extends to my work as a **YouTube Content Creator**, where I've leveraged data modeling and machine learning to grow my channel to over 47 million monthly views. By applying data-driven strategies to content development, I've achieved consistent growth of 1,000+ new subscribers daily.
 
 [<img src="https://user-images.githubusercontent.com/91146906/152072378-b0168a2d-e85c-47c6-a272-fcfb3f6a44ae.svg" height="35"/>](#top)
 
